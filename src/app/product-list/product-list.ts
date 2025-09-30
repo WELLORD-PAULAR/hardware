@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-
+import { Component, signal } from '@angular/core';
+import { computed } from '@angular/core';
 @Component({
   selector: 'app-product-list',
-  imports: [],
+  imports: [ ],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'
 })
