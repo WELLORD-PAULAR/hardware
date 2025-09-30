@@ -1,11 +1,18 @@
-import { Component, signal } from '@angular/core';
-import { computed } from '@angular/core';
+import { Component, signal,OnInit } from '@angular/core';
+import { CartService } from '../services/cart';
 @Component({
   selector: 'app-product-list',
-  imports: [ ],
+  imports: [],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'
 })
-export class ProductList {
+export class ProductList implements OnInit {
+  public dataArray: any[] = [];
+
+  constructor(private cartService: CartService) {}
+
+  ngOnInit() {
+    this.dataArray = this.cartService.products;
+  }
 
 }
